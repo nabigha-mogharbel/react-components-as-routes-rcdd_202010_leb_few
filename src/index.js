@@ -9,31 +9,12 @@ const Home = () => {
     </div>
   );
 };
-const Navbar = (props) =>
+const Navbar = () =>
   <div>
-    <NavLink to="/"  exact
-      style={link}
-      /* add prop for activeStyle */
-      activeStyle={{
-        background: 'darkblue'
-      }}
-    >Home</NavLink>
-    <NavLink
-      to="/about"
-      exact
-      style={props.link}
-      activeStyle={{
-        background: 'darkblue'
-      }}
-    >About</NavLink>
-    <NavLink
-      to="/login"
-      exact
-      style={link}
-      activeStyle={{
-        background: 'darkblue'
-      }}
-    >Login</NavLink>
+    <NavLink to="/" exact style={link} activeStyle={{background: 'darkblue'}}>Home</NavLink>
+    <NavLink to="/about" exact style={link} activeStyle={{background: 'darkblue'}}>About</NavLink>
+    <NavLink to="/login" exact style={link}
+      activeStyle={{background: 'darkblue'}}>Login</NavLink>
   </div>;
 
 const link = {
@@ -73,6 +54,7 @@ const Login = () => {
 ReactDOM.render((
   <Router>
     <div>
+      <Navbar />
       <Route exact path="/" component={Home} />
       <Route exact path="/about" component={About} />
       <Route exact path="/login" component={Login} />
